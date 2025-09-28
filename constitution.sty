@@ -1,0 +1,53 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{constitution}[Constitution Style Definition]
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{enumitem}
+\RequirePackage{titlesec}
+\RequirePackage{hyperref}
+\RequirePackage{setspace}
+\RequirePackage{xcolor}
+\RequirePackage{geometry}
+\RequirePackage{lastpage}
+\RequirePackage{fancyhdr}
+
+% Define page size and sane page margins
+\geometry{
+    a4paper,
+    total={170mm,237mm},
+    left=20mm,
+    top=30mm,
+}
+\setstretch{1.2}
+
+% Define nicer looking links
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+% Define header/footer
+\pagestyle{fancy}
+\fancyhf{}
+% Header/footer content
+\fancyhead[C]{UNSW Debating Society Constitution}
+\fancyfoot[C]{Page \thepage \hspace{1pt} of \hspace{1pt}\color{black}\pageref*{LastPage}}
+% Header/footer rule
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
+\renewcommand{\headruleskip}{10pt}
+\renewcommand{\footruleskip}{10pt}
+
+
+% Define custom enumerate styles for nested numbering up to depth 5
+\setlist[enumerate,1]{label=\thesection.\arabic*., ref=\thesection.\arabic*, leftmargin=*}
+\setlist[enumerate,2]{label=\thesection.\arabic{enumi}.\arabic*., ref=\thesection.\arabic{enumi}.\arabic*, leftmargin=*}
+\setlist[enumerate,3]{label=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic*., ref=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic*, leftmargin=*}
+\setlist[enumerate,4]{label=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic*., ref=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic*, leftmargin=*}
+\setlist[enumerate,5]{label=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.\arabic*., ref=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.\arabic*, leftmargin=*}
+
+% Define new command to bold all references
+\newcommand{\bref}[1]{\textbf{\ref{#1}}}
+
