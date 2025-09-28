@@ -23,7 +23,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TAG=$(git describe --tags --exact-match HEAD)
-          hub release create -m "$(git tag -l --format='%(contents)' "$TAG")" "$TAG" || true
+          gh release create "$(git tag -l --format='%(contents)' "$TAG")" "$TAG" || true
           for file in $LATEX_SUCCESSES; do
             pdf="${file%.*}.pdf"
             echo "Delivering file $pdf"
