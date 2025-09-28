@@ -51,3 +51,4 @@ build/
 *.fls
 *.bcf
 *.pyg
+test*

@@ -17,6 +17,8 @@
 \setlist[enumerate,4]{label=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic*., ref=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic*, leftmargin=*}
 \setlist[enumerate,5]{label=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.\arabic*., ref=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.\arabic*, leftmargin=*}
 
+\newcommand{\bref}[1]{\textbf{\ref{#1}}}
+
 % ==============================================================================
 % A note on references
 % Referencing is done in two parts - A label at the clause being referenced and 
@@ -26,9 +28,9 @@
 % want to reference, where labelname can be any word not already used as a label.
 % Multiple words can be separated with '_' or ':'
 
-% The reference can be inserted by adding ~\ref{labelname} in place of where you
+% The reference can be inserted by adding \bref{labelname} in place of where you
 % would want the reference to appear - i.e., if you want to see "clause 7.1", 
-% you would type into the source code "clause \ref{labelname_for_7_1}".
+% you would type into the source code "clause \bref{labelname_for_7_1}".
 % ==============================================================================
 
 \begin{document}
