@@ -21,8 +21,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
-
+      - name: Checkout
+        uses: actions/checkout@v4
       # Build latex
       - name: Build
         uses: xu-cheng/latex-action@v4
@@ -30,7 +30,14 @@ jobs:
           args: -jobname=UNSW_Debating_Society_Constitution.pdf
           root_file: main.tex
           os: debian
+      # Generate tag
+      - name: Generate release tag
+        id: tag
+        run: |
+          echo "::set-output name=release_tag::As_of_$(date +"%Y.%m.%d_%H-%M")"
+      # Deploy built pdf to releases
       - name: Release
         uses: softprops/action-gh-release@v2.3.3
         with:
+          tag_name: ${{ steps.tag.outputs.release_tag }}
           files: UNSW_Debating_Society_Constitution.pdf
