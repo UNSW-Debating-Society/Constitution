@@ -1,0 +1,54 @@
+\author{UNSW Debating Society}
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{setspace}
+\setstretch{1.2}
+
+\title{UNSW Debating Society Constitution \\[0.5em] \large Current as of October 2024}
+% \date{}
+
+% Define custom enumerate styles for nested numbering up to depth 5
+\setlist[enumerate,1]{label=\thesection.\arabic*., ref=\thesection.\arabic*, leftmargin=*}
+\setlist[enumerate,2]{label=\thesection.\arabic{enumi}.\arabic*., ref=\thesection.\arabic{enumi}.\arabic*, leftmargin=*}
+\setlist[enumerate,3]{label=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic*., ref=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic*, leftmargin=*}
+\setlist[enumerate,4]{label=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic*., ref=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic*, leftmargin=*}
+\setlist[enumerate,5]{label=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.\arabic*., ref=\thesection.\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.\arabic*, leftmargin=*}
+
+% ==============================================================================
+% A note on references
+% Referencing is done in two parts - A label at the clause being referenced and 
+% the actual reference tag where you want to make the reference.
+
+% Labels can be inserted by adding \label{labelname} to the end of the line you
+% want to reference, where labelname can be any word not already used as a label.
+% Multiple words can be separated with '_' or ':'
+
+% The reference can be inserted by adding ~\ref{labelname} in place of where you
+% would want the reference to appear - i.e., if you want to see "clause 7.1", 
+% you would type into the source code "clause \ref{labelname_for_7_1}".
+% ==============================================================================
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\input{sections/01-introduction}
+\input{sections/02-definitions}
+\input{sections/03-members}
+\input{sections/04-executive}
+\input{sections/05-executive-roles}
+\input{sections/06-selections}
+\input{sections/07-subsidies}
+\input{sections/08-meetings}
+\input{sections/09-finance}
+\input{sections/10-co-equity-officers}
+\input{sections/11-tab-officer}
+\input{sections/12-dissolution}
+\appendix
+\input{sections/appendix-a-equity-policy}
+\input{sections/appendix-b-grievance-policy}
+
+\end{document}
