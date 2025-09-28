@@ -27,7 +27,7 @@ jobs:
       - name: Build
         uses: xu-cheng/latex-action@v4
         with:
-          args: -pdf -interaction=nonstopmode -jobname=UNSW_Debating_Society_Constitution.pdf
+          args: -pdf -interaction=nonstopmode -jobname=UNSW_Debating_Society_Constitution
           root_file: main.tex
           os: debian
       # Generate tag
